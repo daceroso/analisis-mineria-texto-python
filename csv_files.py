@@ -58,9 +58,9 @@ def estadistica_dicc(info, campo, ruta, delim, arg, cab):
     for dicc in info:
         valor = dicc[campo]
         if valor in acumulador:
-            acumulador[campo] = acumulador[campo] + 1
+            acumulador[valor] = acumulador[valor] + 1
         else:
-            acumulador[campo] = 1
+            acumulador[valor] = 1
 
     with open(ruta, "w", encoding="UTF-8") as fichero_csv:
         escritor = csv.DictWriter(fichero_csv, delimiter=delim, quotechar=arg, fieldnames=cab)
@@ -69,3 +69,9 @@ def estadistica_dicc(info, campo, ruta, delim, arg, cab):
         for (k, v) in acumulador.items():
             dicc_actual = {cab[0]: k, cab[1]: v}
             escritor.writerow(dicc_actual)
+
+
+
+cabecera = ["Valor", "Apariciones"]
+CSV_estad_comillas = "ficheros/pelis_comillas_est.csv"
+estadistica_dicc(contenido_dicc, "Año", CSV_estad_comillas,",", '"', cabecera)
