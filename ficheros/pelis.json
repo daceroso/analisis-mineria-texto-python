@@ -1,5 +1,24 @@
-{"peliculas":[{"titulo":"Amanece, que no es poco", "autor":"JosÈ Luis Cuerda", "aÒo":1988},
-              {"titulo":"El dÌa de la bestia", "autor":"¡lex de la Iglesia", "aÒo":1995},
-              {"titulo":"El milagro de P. Tinto", "autor":"Javier Fesser", "aÒo":1998},
-              {"titulo":"Torrente", "autor":"Santiago Segura", "aÒo":1998}]
+{
+  "peliculas": [
+    {
+      "titulo": "Amanece, que no es poco",
+      "autor": "Jos√© Luis Cuerda",
+      "a√±o": 1988
+    },
+    {
+      "titulo": "El d√≠a de la bestia",
+      "autor": "√Ålex de la Iglesia",
+      "a√±o": 1995
+    },
+    {
+      "titulo": "El milagro de P. Tinto",
+      "autor": "Javier Fesser",
+      "a√±o": 1998
+    },
+    {
+      "titulo": "Torrente",
+      "autor": "Santiago Segura",
+      "a√±o": 1998
+    }
+  ]
 }
