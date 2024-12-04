@@ -29,3 +29,32 @@ def crear_dicc_estad(dicc, campo):
 estadisticas = crear_dicc_estad(dicc_pelis, 'año')
 
 print(estadisticas)
+
+
+def crear_estadisticas_json_simple(dicc, campo, ruta_out):
+    resultado = crear_dicc_estad(dicc, campo)
+    with open(ruta_out, 'w', encoding="UTF-8") as fichero_json:
+        json.dump(resultado, fichero_json)
+
+
+pelis_json_estad = "ficheros/pelis_estad1.json"
+
+crear_estadisticas_json_simple(dicc_pelis, 'año', pelis_json_estad)
+
+
+def crear_estadisticas_json_estructurado(dicc, campo, campos, ruta_out):
+    estad = crear_dicc_estad(dicc, campo)
+    lista = []
+
+    for (k, v) in estad.items():
+        dicc = {campos[0]: k, campos[1]: v}
+        lista.append(dicc)
+    resultado = {"estadisticas": lista}
+
+    with open(ruta_out, "w", encoding="UTF-8") as fichero_json:
+        json.dump(resultado, fichero_json)
+
+
+_pelis_json = "ficheros/pelis_estad_v1.json"
+campos = ["Valor", "Apariciones"]
+crear_estadisticas_json_estructurado(dicc_pelis, "año", campos, _pelis_json)
